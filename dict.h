@@ -26,7 +26,7 @@ typedef struct _DictItem
     int category;
 }DictItem;
 
-Dict* createDict(name, author);
+Dict* createDict(const char* name, const char* author);
 Dict* loadDict(FILE* fs);
 void saveDict(Dict* dict, const char* path);
 void freeDict(Dict* dict);

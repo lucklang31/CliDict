@@ -7,5 +7,7 @@ Dict* createDict(const char* name, const char* author)
     dict->author = createCstr(author);
     dict->itemCount = 0;
     dict->categoryCount = 0;
+
+    return dict;
 }
 

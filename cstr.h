@@ -15,5 +15,8 @@ typedef struct _Cstr{
 Cstr* createCstr(const char* string);
 void freeCstr(Cstr* cstr);
 
+void setCstr(Cstr* cstr, const char* string);
+void addCstr(Cstr* cstr, const char* string);
+
 #endif
 

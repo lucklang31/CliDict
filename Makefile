@@ -4,14 +4,17 @@ CliDict: main.o
 main.o: main.c
 	gcc main.c -c -o main.o
 
-test.out: test.o
-	gcc test.o -o test.out
+test.out: test.o cstr.o
+	gcc test.o cstr.o -o test.out
 
 test.o: test.out
 	gcc test.c -c -o test.o
 
 test: test.out
 	${}
+
+cstr.o: cstr.c cstr.h
+	gcc cstr.c -c -o cstr.o
 
 clean:
 	rm *.o CliDict test.out

@@ -1,6 +1,7 @@
 #ifndef _DICT_H
 #define _DICT_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "cstr.h"
 
@@ -24,6 +25,17 @@ typedef struct _DictItem
     Cstr* pronunciation;
     int category;
 }DictItem;
+
+Dict* createDict(name, author);
+Dict* loadDict(FILE* fs);
+void saveDict(Dict* dict, const char* path);
+void freeDict(Dict* dict);
+
+void appendItem(Dict* dict, DictItem* item);
+void deleteItem(Dict* dict, int index);
+
+void appendCategory(Dict* dict, const char* category);
+void deleteCategory(Dict* dict, int index);
 
 #endif
 
